@@ -7,7 +7,7 @@
     "mongoose": "^8.1.1",
     "zod": "^3.22.4"
   },
-  "script" : {
+  "scripts" : {
     "start" : "node index.js"
   }
 }
