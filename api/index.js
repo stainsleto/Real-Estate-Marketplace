@@ -9,8 +9,8 @@ const userRouter = require('./routes/user')
 
 app.use(bodyParser.json())
 
-app.use('/admin',adminRouter)
-app.use('/user',userRouter)
+app.use('/api/admin',adminRouter)
+app.use('/api/user',userRouter)
 
 const PORT = 3000
 
