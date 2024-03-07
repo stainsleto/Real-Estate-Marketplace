@@ -1,13 +1,12 @@
 import React from 'react'
 import './App.css'
+import Home from './Home/Home'
 
 function App() {
 
   return (
     <>
-      <div className='text-3xl font-bold'>
-        RealEstate Application
-      </div>
+      <Home />
     </>
   )
 }
