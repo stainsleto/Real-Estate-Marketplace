@@ -148,7 +148,7 @@ router.post('/addproperty', userMiddleware,async (req,res) => {
 
 // looking out the properties after login s
 
-router.get('/property',userMiddleware, async (req,res) =>{
+router.get('/property', async (req,res) =>{
     try{
 
         const all  = await RealEstate.find()
