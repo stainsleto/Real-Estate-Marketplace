@@ -146,7 +146,7 @@ router.post('/addproperty', userMiddleware,async (req,res) => {
 
 
 
-// looking out the properties after login s
+// looking out the properties =
 
 router.get('/property', async (req,res) =>{
     try{
@@ -159,6 +159,23 @@ router.get('/property', async (req,res) =>{
     catch(err){
         res.status(404).json({
             "message" : `Error Catched : ${err} `
+        })
+    }
+})
+
+//viewing a single property
+
+router.get('/property/:propertyId', async (req,res) => {
+    const propertyId = req.params.propertyId
+    try{
+        const property = await RealEstate.findById(propertyId)
+        res.status(200).json({
+            response : property
+        })
+    }
+    catch(err){
+        res.status(404).json({
+            message : `Error in fetching the property ${err}`
         })
     }
 })
