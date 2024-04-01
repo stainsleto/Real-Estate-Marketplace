@@ -4,7 +4,7 @@ import Home from './Home/Home'
 import Property from './Property/index'
 import SingleProperty from './SingleProperty/index'
 import {Login} from './Login/index'
-import { Dashboard } from './Dashboard/Dashboard'
+import  Dashboard  from './Dashboard/Dashboard'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
