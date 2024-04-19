@@ -13,19 +13,14 @@ const userSchema = zod.object({
 })
 
 const realestateSchema = zod.object({
-    title : zod.string(),
+    propertyName : zod.string(),
     description : zod.string(),
-    city : zod.string(),
-    price : zod.number(),
-    imageLink : zod.string(),
-    bedroom : zod.number(),
-    bathroom : zod.number(),
-    numberOfRooms : zod.number(),
-    saleCondition : zod.string(),
-    parking : zod.boolean(),
-    dateBuild : zod.string(),
-    buildType : zod.string(),
-    squareFeet : zod.number()
+    location : zod.string(),
+    price : zod.number().default(0),
+    bhk : zod.number(),
+    bath : zod.number(),
+    squareFoot : zod.number(),
+
 })
 
 module.exports = {

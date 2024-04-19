@@ -26,19 +26,13 @@ const UserSchema = new mongoose.Schema({
 
 
 const realEstateSchema =  new mongoose.Schema({
-    title : String,
+    propertyName : String,
     description : String,
-    city : String,
+    location : String,
     price : Number,
-    imageLink : String,
-    bedroom : Number,
-    bathroom : Number,
-    numberOfRooms : Number,
-    saleCondition : String,
-    parking : Boolean,
-    dateBuild : String,
-    buildType : String,
-    squareFeet : Number
+    bhk : Number,
+    bath : Number,
+    squareFoot : Number
 })
 
 const Admin = mongoose.model('Admin',AdminSchema);

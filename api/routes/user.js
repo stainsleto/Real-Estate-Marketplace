@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const jwt = require('jsonwebtoken')
-const  multer = require('multer')
+// const  multer = require('multer')
 const {User, RealEstate} = require('../db/index')
 const userMiddleware = require('../middleware/user')
 const {userSchema,realestateSchema} = require('../schemas')
@@ -64,51 +64,45 @@ router.post('/login', async (req,res) => {
 
 
 router.post('/addproperty', userMiddleware,async (req,res) => {
-    const { title,description,city,price,imageLink,bedroom,bathroom,numberOfRooms,saleCondition,parking,dateBuild,buildType,squareFeet} = realestateSchema.parse(req.body)
+    const { propertyName,description,location,price,squareFoot,bhk,bath} = realestateSchema.parse(req.body)
     const userId = req.user.userId    //provides the user details of the logged-in user 
     try{
         const newProperty = await RealEstate.create({
-            title,
+            propertyName,
             description,
-            city,
+            location,
             price,
-            imageLink,
-            bedroom,
-            bathroom,
-            numberOfRooms,
-            saleCondition,
-            parking,
-            dateBuild,
-            buildType,
-            squareFeet
+            squareFoot,
+            bhk,
+            bath
         })
 
         //uploading the image
         
         
-        upload.single('propertyImage') 
+        // upload.single('propertyImage') 
 
-        const storage = multer.diskStorage({
-            destination: function (req, file, cb) {
-              cb(null, './uploads')
-            },
-            filename: function (req, file, cb) {
+        // const storage = multer.diskStorage({
+        //     destination: function (req, file, cb) {
+        //       cb(null, './uploads')
+        //     },
+        //     filename: function (req, file, cb) {
             
-              cb(null, newProperty._id)
-            }
-          })
+        //       cb(null, newProperty._id)
+        //     }
+        //   })
           
-          const upload = multer({ storage })
+        //   const upload = multer({ storage })
 
-          const property = await RealEstate.findById(newProperty._id)
-          if(property){
-            property.imageLink = `http://girei.tech/uploads/${newProperty._id}`
-          }
-          else{
-            res.status(404).json({
-                message : 'Property not found'
-            })
-          }
+        //   const property = await RealEstate.findById(newProperty._id)
+        //   if(property){
+        //     property.imageLink = `http://girei.tech/uploads/${newProperty._id}`
+        //   }
+        //   else{
+        //     res.status(404).json({
+        //         message : 'Property not found'
+        //     })
+        //   }
 
           //updating the image link done 
 
