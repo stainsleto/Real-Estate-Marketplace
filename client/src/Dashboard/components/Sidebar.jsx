@@ -12,7 +12,7 @@ const Sidebar = ({changeComponent}) => {
                 <h3 className='text-2xl font-bold'>GIREI</h3>
                 <button onClick={() => changeComponent('addproperty')} className="flex gap-2 items-center"> <MdAddChart className="w-6 h-6" /> Add Property</button>
                 <button onClick={() => changeComponent('chats')} className="flex gap-2 items-center"><IoChatbubblesOutline className="w-6 h-6" /> Chats</button>
-                <button onClick={() => changeComponent('ViewProperty')} className="flex gap-2 items-center"><BsBuildings className="w-6 h-6" />All Properties</button>
+                <button onClick={() => changeComponent('allProperty')} className="flex gap-2 items-center"><BsBuildings className="w-6 h-6" />All Properties</button>
                 <button onClick={() => changeComponent('logout')} className="flex gap-2 items-center"><RiLogoutCircleLine className="w-6 h-6" />Logout</button>
             </div>
         </section>
