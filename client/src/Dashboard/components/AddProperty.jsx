@@ -51,7 +51,11 @@ const AddProperty = () => {
             bath : property.bath,
             id : propertyId
         }
-        axios.post('https://realestate-model-2d3a1be66d6f.herokuapp.com/predict_home_price',propertyDetails)
+        axios.post('https://realestate-model-2d3a1be66d6f.herokuapp.com/predict_home_price',propertyDetails,{ 
+            headers : {
+                'Content-Type' : 'application/json'
+            }}    
+        )
     }
 
     useEffect(() => {
