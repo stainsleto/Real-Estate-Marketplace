@@ -27,6 +27,11 @@ const AddProperty = () => {
         e.preventDefault()
         console.log(property)
         console.log(token)
+
+        const formData = new FormData();
+
+        
+
         axios.post('https://girei.tech/api/user/addproperty',property, {
             headers: {
                 authorization : token
@@ -44,14 +49,13 @@ const AddProperty = () => {
             })
         })
 
-        const propertyDetails = {
-            total_sqft : property.squareFoot,
-            location : property.location,
-            bhk : property.bhk,
-            bath : property.bath,
-            id : propertyId
-        }
-        axios.post('https://realestate-model-2d3a1be66d6f.herokuapp.com/predict_home_price',propertyDetails)
+        formData.append('total_sqft',property.squareFoot )
+        formData.append('location',property.location )
+        formData.append('bhk',property.bhk )
+        formData.append('bath',property.bath )
+        formData.append('id',propertyId )
+
+        axios.post('https://realestate-model-2d3a1be66d6f.herokuapp.com/predict_home_price',formData)
     }
 
     useEffect(() => {
