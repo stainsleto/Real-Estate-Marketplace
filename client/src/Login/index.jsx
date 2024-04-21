@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import axios from 'axios'
-import {Navigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 const Login = () => {
-
+    const navigate = useNavigate()
     const [loginDetails, setLoginDetails] = useState({ username : "", password : ""})
+    const [loginStatus, setLoginStatus] = useState(false)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -14,8 +15,16 @@ const Login = () => {
         .then(response => {
             console.log(response)
             localStorage.setItem('token',response.data.token)
-            response.data ? <Navigate to='/dashboard' replace={true} />  : console.log("Login failed ")
+            response.data.token ? navigate("/dashboard")  : console.log("Login failed ")
         })
+    }
+
+    const handleSuccess = () => {
+        console.log("Login success")
+    }
+
+    const handleFailure = () => {
+        console.log("Login failed")
     }
 
     return (

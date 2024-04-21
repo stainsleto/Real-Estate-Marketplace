@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import Sidebar from "./components/Sidebar"
 import AddProperty from "./components/AddProperty";
 import Property from "../Property";
+import Logout from "./components/Logout";
 
 const Dashboard = () => {
 
@@ -17,7 +18,9 @@ const Dashboard = () => {
                 <Sidebar changeComponent = {changeComponent} />
             </section>
 
-            <section className="w-10/12 bg-gray-100 h-screen">
+            <section className="w-10/12 bg-gray-100 h-auto">
+
+                {currentComponent === null && <h1 className="text-2xl text-center mt-10">Welcome to Dashboard</h1>}
                 
                 {currentComponent === 'addproperty' && <AddProperty />}
                 {currentComponent === 'chats' && <Chats />}
