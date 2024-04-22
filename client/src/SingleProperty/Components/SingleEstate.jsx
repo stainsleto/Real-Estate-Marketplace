@@ -9,7 +9,6 @@ const SingleEstate = ({propertyData}) => {
 
     window.addEventListener('scroll', () => {
         setScroll(window.scrollY);
-        console.log(scroll)
     });
 
     const localPredictedPrice = (propertyData.predictedPrice*100000).toLocaleString('en-IN')

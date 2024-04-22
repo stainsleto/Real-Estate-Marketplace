@@ -10,13 +10,15 @@ const AddProperty = () => {
         bhk : 0,
         bath : 0,
         description:"",
-        price:0
+        price:0,
+        email: ''
     })
 
     const [locationNames, setLocationNames] = useState([])
     const [propertyId, setPropertyId] = useState("")
-
+    
     const token = localStorage.getItem('token')
+    const emailId = localStorage.getItem('email')
 
     const handleChange = (e) => {
         const {name, value } = e.target
@@ -26,6 +28,7 @@ const AddProperty = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setProperty({...property, email : emailId})
         console.log(property)
         console.log(token)
         axios.post('https://girei.tech/api/user/addproperty',property, {
