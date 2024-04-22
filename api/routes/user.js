@@ -72,6 +72,7 @@ router.post('/addproperty', userMiddleware,async (req,res) => {
             description,
             location,
             price,
+            predictedPrice,
             squareFoot,
             bhk,
             bath
