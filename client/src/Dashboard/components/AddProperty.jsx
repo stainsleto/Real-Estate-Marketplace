@@ -48,7 +48,7 @@ const AddProperty = () => {
                 location : property.location,
                 bhk : property.bhk,
                 bath : property.bath,
-                id : propertyId
+                id : response.data.propertyId
             }
             axios.post('https://realestate-model-2d3a1be66d6f.herokuapp.com/predict_home_price',propertyDetails,{ 
                 headers : {
