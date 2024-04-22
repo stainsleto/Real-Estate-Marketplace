@@ -36,7 +36,6 @@ router.post('/signup', async (req,res) => {
 router.post('/login', async (req,res) => {
 
     const {username, password} = req.body
-
     try{
        const isValidated =  await User.findOne({
             username,
@@ -48,7 +47,8 @@ router.post('/login', async (req,res) => {
         if(isValidated){
             const token = jwt.sign({userId : isValidated._id, username}, JWT_SECRET)
             res.status(200).json({
-                'token' : `Bearer ${token}`
+                'token' : `Bearer ${token}`,
+                'email' : isValidated.email
             })
         }
     }
@@ -66,6 +66,7 @@ router.post('/login', async (req,res) => {
 router.post('/addproperty', userMiddleware,async (req,res) => {
     const { propertyName,description,location,price,predictedPrice,squareFoot,bhk,bath} = realestateSchema.parse(req.body)
     const userId = req.user.userId    //provides the user details of the logged-in user 
+    const emailId = req.user.email
     try{
         const newProperty = await RealEstate.create({
             propertyName,
@@ -75,8 +76,11 @@ router.post('/addproperty', userMiddleware,async (req,res) => {
             predictedPrice,
             squareFoot,
             bhk,
-            bath
+            bath,
+            email : emailId,
         })
+
+        
 
         //uploading the image
         

@@ -21,7 +21,7 @@ const realestateSchema = zod.object({
     bhk : zod.number(),
     bath : zod.number(),
     squareFoot : zod.number(),
-
+    email : zod.email()
 })
 
 module.exports = {
