@@ -7,6 +7,7 @@ import {Login} from './Login/index'
 import  Dashboard  from './Dashboard/Dashboard'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import PrivateRoute from './Components/PrivateRoute'
+import Signup from './Signup'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route  path="/login" element={<Login />} />
+        <Route  path="/signup" element={<Signup />} />
         <Route  path="/dashboard" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
 
         <Route path='/property' element={<Property />} />

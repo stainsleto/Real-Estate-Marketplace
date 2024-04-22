@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-
+import SingleEstate from "./Components/SingleEstate";
 const PropertySingle = () => {
     const [singlePropertyData, setSinglePropertyData] = useState(null);
     let { propertyId } = useParams();
@@ -21,12 +21,7 @@ const PropertySingle = () => {
         <section>
             {
                 singlePropertyData ? (
-                    <div className="flex flex-col bg-gray-100 hover:bg-red-200 justify-center border-solid rounded-md border-2 items-center gap-3 p-5">
-                        <img src={singlePropertyData.imageLink} alt="Estate" className="w-60 h-40 object-cover rounded-md" />
-                        <h3 className="font-extrabold text-xl">${singlePropertyData.price}</h3>
-                        <p className="font-bold text-md">{singlePropertyData.bedroom} beds | {singlePropertyData.bathroom} baths | {singlePropertyData.squareFeet} sqft</p>
-                        <p className="font-bold text-md">{singlePropertyData.city}</p>
-                    </div>
+                    <SingleEstate propertyData={singlePropertyData} />
                 ) : (
                     <p>No property data available.</p>
                 )
