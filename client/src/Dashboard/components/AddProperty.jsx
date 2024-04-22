@@ -42,20 +42,22 @@ const AddProperty = () => {
                 bath : 0,
                 description:""
             })
+
+            const propertyDetails = {
+                total_sqft : property.squareFoot,
+                location : property.location,
+                bhk : property.bhk,
+                bath : property.bath,
+                id : propertyId
+            }
+            axios.post('https://realestate-model-2d3a1be66d6f.herokuapp.com/predict_home_price',propertyDetails,{ 
+                headers : {
+                    'Content-Type' : 'application/json'
+                }}    
+            )
         })
 
-        const propertyDetails = {
-            total_sqft : property.squareFoot,
-            location : property.location,
-            bhk : property.bhk,
-            bath : property.bath,
-            id : propertyId
-        }
-        axios.post('https://realestate-model-2d3a1be66d6f.herokuapp.com/predict_home_price',propertyDetails,{ 
-            headers : {
-                'Content-Type' : 'application/json'
-            }}    
-        )
+        
     }
 
     useEffect(() => {
