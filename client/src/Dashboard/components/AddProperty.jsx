@@ -20,7 +20,7 @@ const AddProperty = () => {
 
     const handleChange = (e) => {
         const {name, value } = e.target
-        const updatedValue = name === 'bhk' || name === "bath" || name === "squareFoot" ? Number(value) : value
+        const updatedValue = name === 'bhk' || name === "bath" || name === "squareFoot" || name === "price" ? Number(value) : value
         setProperty({...property, [name] : updatedValue})
     }
 
@@ -30,7 +30,8 @@ const AddProperty = () => {
         console.log(token)
         axios.post('https://girei.tech/api/user/addproperty',property, {
             headers: {
-                authorization : token
+                authorization : token,
+                'Access-Control-Allow-Origin': '*'
             }
         })
         .then(response => {
@@ -113,7 +114,7 @@ const AddProperty = () => {
                         </div>
 
                         <div>
-                            <label> Price (USD) </label>
+                            <label> Price (INR) </label>
                             <input type='number' value={property.price} onChange={handleChange} name="price" placeholder='Price in USD' className='block w-72 p-2 px-3 my-2 rounded-lg' />
 
                         </div>

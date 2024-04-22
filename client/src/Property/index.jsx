@@ -84,7 +84,7 @@ const Property = () => {
                         return (
                             <div key={index} onClick={ () => handleProductClick(property._id)} className="flex flex-col hover:cursor-pointer bg-red-200 text-left  border-solid rounded-3xl border-2 gap-3 p-5">
                                 <img src={EstateImage} alt="Estate" className="w-60 h-40 object-cover rounded-md" />
-                                <h3 className="font-extrabold text-xl">${parseInt(property.price*100000/83)}</h3>
+                                <h3 className="font-extrabold text-xl">₹{parseInt(property.price*100000)}</h3>
                                 <p className="font-bold text-xs flex gap-2 items-center"> <FaBed />{property.bhk} bhk <FaShower />{property.bath} bath</p>
                                 <p className="font-bold text-xs flex gap-2 items-center"><BiShapeTriangle />{property.squareFoot} sqft <BiCurrentLocation />{property.city}</p>
                             </div>
