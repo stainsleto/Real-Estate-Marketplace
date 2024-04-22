@@ -30,6 +30,7 @@ const realEstateSchema =  new mongoose.Schema({
     description : String,
     location : String,
     price : Number,
+    predictedPrice : Number,
     bhk : Number,
     bath : Number,
     squareFoot : Number

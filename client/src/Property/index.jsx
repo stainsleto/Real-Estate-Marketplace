@@ -44,38 +44,38 @@ const Property = () => {
                 {loading ? (
                     // load screen skeleton 
                     
-                    <div role="status" class="space-y-2.5 animate-pulse max-w-lg">
-                        <div class="flex items-center w-full">
-                            <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32"></div>
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                    <div role="status" className="space-y-2.5 animate-pulse max-w-lg">
+                        <div className="flex items-center w-full">
+                            <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32"></div>
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
                         </div>
-                        <div class="flex items-center w-full max-w-[480px]">
-                            <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
-                                    <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+                        <div className="flex items-center w-full max-w-[480px]">
+                            <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+                                    <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
                         </div>
-                        <div class="flex items-center w-full max-w-[400px]">
-                            <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-                            <div class="h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                        <div className="flex items-center w-full max-w-[400px]">
+                            <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                            <div className="h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
                         </div>
-                        <div class="flex items-center w-full max-w-[480px]">
-                            <div class="h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
-                                    <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+                        <div className="flex items-center w-full max-w-[480px]">
+                            <div className="h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+                                    <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
                         </div>
-                        <div class="flex items-center w-full max-w-[440px]">
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-32"></div>
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
-                            <div class="h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+                        <div className="flex items-center w-full max-w-[440px]">
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-32"></div>
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+                            <div className="h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
                         </div>
-                        <div class="flex items-center w-full max-w-[360px]">
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-                            <div class="h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
-                            <div class="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                        <div className="flex items-center w-full max-w-[360px]">
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                            <div className="h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
+                            <div className="h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
                         </div>
-                        <span class="sr-only">Loading...</span>
+                        <span className="sr-only">Loading...</span>
                     </div>
 
 
@@ -84,9 +84,9 @@ const Property = () => {
                         return (
                             <div key={index} onClick={ () => handleProductClick(property._id)} className="flex flex-col hover:cursor-pointer bg-red-200 text-left  border-solid rounded-3xl border-2 gap-3 p-5">
                                 <img src={EstateImage} alt="Estate" className="w-60 h-40 object-cover rounded-md" />
-                                <h3 className="font-extrabold text-xl">${property.price}</h3>
-                                <p className="font-bold text-xs flex gap-2 items-center"> <FaBed />{property.bedroom} bed <FaShower />{property.bathroom} bath</p>
-                                <p className="font-bold text-xs flex gap-2 items-center"><BiShapeTriangle />{property.squareFeet} sqft <BiCurrentLocation />{property.city}</p>
+                                <h3 className="font-extrabold text-xl">${parseInt(property.price*100000/83)}</h3>
+                                <p className="font-bold text-xs flex gap-2 items-center"> <FaBed />{property.bhk} bhk <FaShower />{property.bath} bath</p>
+                                <p className="font-bold text-xs flex gap-2 items-center"><BiShapeTriangle />{property.squareFoot} sqft <BiCurrentLocation />{property.city}</p>
                             </div>
                         )
                     })

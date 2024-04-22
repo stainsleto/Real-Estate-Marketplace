@@ -17,6 +17,7 @@ const realestateSchema = zod.object({
     description : zod.string(),
     location : zod.string(),
     price : zod.number().default(0),
+    predictedPrice : zod.number().default(0),
     bhk : zod.number(),
     bath : zod.number(),
     squareFoot : zod.number(),

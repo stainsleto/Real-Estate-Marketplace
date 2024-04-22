@@ -9,7 +9,8 @@ const AddProperty = () => {
         location : "",
         bhk : 0,
         bath : 0,
-        description:""
+        description:"",
+        price:0
     })
 
     const [locationNames, setLocationNames] = useState([])
@@ -40,7 +41,8 @@ const AddProperty = () => {
                 location : "",
                 bhk : 0,
                 bath : 0,
-                description:""
+                description:"",
+                price:0
             })
 
             const propertyDetails = {
@@ -108,6 +110,12 @@ const AddProperty = () => {
                                     <option disabled>Loading...</option>
                                 )}
                             </select>
+                        </div>
+
+                        <div>
+                            <label> Price (USD) </label>
+                            <input type='number' value={property.price} onChange={handleChange} name="price" placeholder='Price in USD' className='block w-72 p-2 px-3 my-2 rounded-lg' />
+
                         </div>
 
                         <div>
