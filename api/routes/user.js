@@ -64,7 +64,7 @@ router.post('/login', async (req,res) => {
 
 
 router.post('/addproperty', userMiddleware,async (req,res) => {
-    const { propertyName,description,location,price,squareFoot,bhk,bath} = realestateSchema.parse(req.body)
+    const { propertyName,description,location,price,predictedPrice,squareFoot,bhk,bath} = realestateSchema.parse(req.body)
     const userId = req.user.userId    //provides the user details of the logged-in user 
     try{
         const newProperty = await RealEstate.create({
