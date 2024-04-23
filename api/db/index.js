@@ -33,7 +33,8 @@ const realEstateSchema =  new mongoose.Schema({
     predictedPrice : Number,
     bhk : Number,
     bath : Number,
-    squareFoot : Number
+    squareFoot : Number,
+    email : String
 })
 
 const Admin = mongoose.model('Admin',AdminSchema);
