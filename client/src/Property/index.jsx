@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Header from '../Components/Header'
 import axios from "axios";
-import EstateImage from "../assets/estate.png";
+import EstateImage from "../assets/sampleEstate.jpg";
 import { FaBed, FaShower } from "react-icons/fa";
 import { BiShapeTriangle, BiCurrentLocation } from "react-icons/bi";
 import {useNavigate} from 'react-router-dom'
@@ -40,7 +40,7 @@ const Property = () => {
         <section className="flex flex-col justify-center items-center my-20 gap-10 text-center">
             <h2 className="font-extrabold text-3xl">Properties to look over</h2>
             
-            <div className="grid grid-cols-5 grid-rows-2 justify-center items-center gap-10 mx-20">
+            <div className="grid grid-cols-4 grid-rows-2 justify-center items-center gap-10 mx-40">
                 {loading ? (
                     // load screen skeleton 
                     
@@ -82,11 +82,12 @@ const Property = () => {
 ) : (
                     propertyData && propertyData.map((property, index) => {
                         return (
-                            <div key={index} onClick={ () => handleProductClick(property._id)} className="flex flex-col hover:cursor-pointer bg-red-200 text-left  border-solid rounded-3xl border-2 gap-3 p-5">
-                                <img src={EstateImage} alt="Estate" className="w-60 h-40 object-cover rounded-md" />
-                                <h3 className="font-extrabold text-xl">₹{parseInt(property.price).toLocaleString('en-IN')}</h3>
-                                <p className="font-bold text-xs flex gap-2 items-center"> <FaBed />{property.bhk} bhk <FaShower />{property.bath} bath</p>
-                                <p className="font-bold text-xs flex gap-2 items-center"><BiShapeTriangle />{property.squareFoot} sqft <BiCurrentLocation />{property.location}</p>
+                            <div key={index} onClick={ () => handleProductClick(property._id)} className="flex flex-col hover:cursor-pointer  text-left  border-solid rounded-xl border-2 gap-3 p-5">
+                                <img src={EstateImage} alt="Estate" className="rounded-md" />
+                                <h3 className="font-extrabold text-lg">{property.propertyName}</h3>
+                                <h3 className="font-bold text-base">₹{parseInt(property.price).toLocaleString('en-IN')}</h3>
+                                <p className="font-bold text-xs flex gap-4 items-center"> <span className="flex gap-2 items-center"><FaBed />{property.bhk} bhk</span> <span className="flex gap-2 items-center"> <FaShower />{property.bath} bath </span></p>
+                                <p className="font-bold text-xs flex gap-2 items-center"><span className="flex gap-2 items-center"><BiShapeTriangle />{property.squareFoot} sqft </span> <span className="flex gap-2 items-center"> <BiCurrentLocation />{property.location} </span> </p>
                             </div>
                         )
                     })
