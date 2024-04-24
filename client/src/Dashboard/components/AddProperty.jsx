@@ -21,7 +21,7 @@ const AddProperty = () => {
     const emailId = localStorage.getItem('email')
 
     const handleChange = (e) => {
-        const {name, value } = e.target
+        const {name, value} = e.target
         const updatedValue = name === 'bhk' || name === "bath" || name === "squareFoot" || name === "price" ? Number(value) : value
         setProperty({...property, [name] : updatedValue})
     }
@@ -31,7 +31,7 @@ const AddProperty = () => {
         setProperty({...property, email : emailId})
         console.log(property)
         console.log(token)
-        axios.post('https://girei.tech/api/user/addproperty',property, {
+        axios.post('http://localhost:3000/api/user/addproperty',property, {
             headers: {
                 authorization : token,
                 'Access-Control-Allow-Origin': '*'

@@ -35,7 +35,7 @@ const Properties = () => {
         <section className="flex flex-col justify-center items-center my-20 gap-10 text-center">
             <h2 className="font-extrabold text-3xl">Find Your Perfect Home</h2>
             
-            <div className="grid grid-cols-4 grid-rows-2 justify-center items-center gap-10 mx-40">
+            <div className="grid grid-cols-4 grid-rows-2 justify-center items-center gap-7 mx-20">
                 {loading ? (
                     <div> 
                         <h1> Loading.... </h1> 
@@ -43,7 +43,7 @@ const Properties = () => {
                 ) : (
                     propertyData && propertyData.map((property, index) => {
                         return (
-                            <div key={index} onClick={ () => handleProductClick(property._id)} className="flex flex-col hover:cursor-pointer  text-left  border-solid rounded-xl border-2 gap-3 p-5">
+                            <div key={index} onClick={ () => handleProductClick(property._id)} className="flex flex-col hover:cursor-pointer  text-left  border-solid rounded-xl border-2 shadow-md gap-3 p-5">
                                 <img src={EstateImage} alt="Estate" className="rounded-md" />
                                 <h3 className="font-extrabold text-lg">{property.propertyName}</h3>
                                 <h3 className="font-bold text-base">₹{parseInt(property.price).toLocaleString('en-IN')}</h3>

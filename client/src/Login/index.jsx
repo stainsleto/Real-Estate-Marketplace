@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from 'axios'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import Header from "../Components/Header";
 
 const Login = () => {
     const navigate = useNavigate()
@@ -30,6 +31,7 @@ const Login = () => {
 
     return (
       <>
+      <Header/>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             
@@ -91,9 +93,9 @@ const Login = () => {
   
             <p className="mt-10 text-center text-sm text-gray-500">
               New ?{' '}
-              <a href="#" className="font-semibold leading-6 text-red-500 hover:text-red-600">
+              <Link to="/signup" className="font-semibold leading-6 text-red-500 hover:text-red-600">
                 SignUp
-              </a>
+              </Link>
             </p>
           </div>
         </div>

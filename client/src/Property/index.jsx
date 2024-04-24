@@ -40,7 +40,7 @@ const Property = () => {
         <section className="flex flex-col justify-center items-center my-20 gap-10 text-center">
             <h2 className="font-extrabold text-3xl">Properties to look over</h2>
             
-            <div className="grid grid-cols-4 grid-rows-2 justify-center items-center gap-10 mx-40">
+            <div className="grid grid-cols-4 grid-rows-2 justify-center items-center gap-10 mx-20">
                 {loading ? (
                     // load screen skeleton 
                     
