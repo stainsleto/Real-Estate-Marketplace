@@ -31,7 +31,7 @@ const AddProperty = () => {
         setProperty({...property, email : emailId})
         console.log(property)
         console.log(token)
-        axios.post('http://localhost:3000/api/user/addproperty',property, {
+        axios.post('https://girei.tech/api/user/addproperty',property, {
             headers: {
                 authorization : token,
                 'Access-Control-Allow-Origin': '*'
